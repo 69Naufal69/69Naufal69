@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function add()
+{
+var x=document.getElementById("fno").value;
+var y=document.getElementById("lno").value;
+x=Number(x);
+y=Number(y);
+var z;
+z=x+y;
+document.getElementById("result").value=z;
+document.getElemetnById("demo").innerHTML=z;
+alert(z*z)
+}
+function subtract()
+{
+var x=document.getElementById("fno").value;
+var y=document.getElementById("lno").value;
+x=Number(x);
+y=Number(y);
+var z;
+z=x-y;
+document.getElementById("result").value=z;
+document.getElemetnById("demo").innerHTML=z;
+alert(z*z)
+}
+function multiply()
+{
+var x=document.getElementById("fno").value;
+var y=document.getElementById("lno").value;
+x=Number(x);
+y=Number(y);
+var z;
+z=x*y;
+document.getElementById("result").value=z;
+document.getElemetnById("demo").innerHTML=z;
+alert(z*z)
+}
+function divide()
+{
+var x=document.getElementById("fno").value;
+var y=document.getElementById("lno").value;
+x=Number(x);
+y=Number(y);
+var z;
+z=x/y;
+document.getElementById("result").value=z;
+document.getElemetnById("demo").innerHTML=z;
+alert(z*z)
+}
+</script>
+</head>
+<body>
+<form action="/action_page.php">
+	<label>First Number:</label><br>
+	<input type="text" id="fno" name="fname" value="0"><br>
+	<label>Second Number:</label><br>
+	<input type="text" id="lno" value="0"><br>
+	<input type="button" value="+"onclick="add()">
+	<input type="button" value="-"onclick="subtract()">
+	<input type="button" value="*"onclick="multiply()">
+	<input type="button" value="/"onclick="divide()"><br><br>
+	<label>Result:</label><br>
+	<input type="text" id="result" value="0"><br>
+
+</body>
+</html>

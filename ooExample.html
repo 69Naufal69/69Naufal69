@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>New Patient Details</title> 
+      <script>
+         
+
+        //create the user defined object type Person
+        function Patient (pID, ln, fn, tn) {
+          this.patientID=pID
+          this.lastName=ln
+          this.firstNme=fn
+          this.telephoneNumber=tn
+        }
+
+        //create the method
+         Patient.prototype.displayPatient = function(){
+          var display = ("The new patient details are PatientID: "+this.patientID+" Last name: "+this.lastName+" First name: "+this.firstNme+" Telephone number: "+this.telephoneNumber)
+            return display
+         }
+
+         //function to take input from form, create new instance of Person
+          //call the Person constructor and the DisplayPatient method to
+          //display the new patient details and then clear the form 
+        function addPatient(){f
+          var iID=document.getElementById("inputPatientID").value
+          var iLn=document.getElementById("inputLastName").value
+          var iFn=document.getElementById("inputFirstName").value
+          var iTn=document.getElementById("inputTelephoneNumber").value
+
+          var newPatient = new Patient(iID, iLn, iFn, iTn)
+          alert(newPatient.displayPatient())
+           document.getElementById("patientForm").reset()
+        }
+      </script>
+    </head>
+    <body>
+     <h2>New Patient Details</h2>
+      <form id="patientForm">
+        <fieldset style="width:15%">
+          <p>Enter PatientID :<input type="text" id="inputPatientID"></p>
+          <p>Enter Last name :<input type="text" id="inputLastName"></p>
+          <p>Enter First name :<input type="text" id="inputFirstName"></p>
+          <p>Enter Telephone number :<input type="text" id="inputTelephoneNumber"></p>
+        </fieldset>
+       <p><input type="button" value="Register" id="submit" onclick="addPatient()"></p>
+    </form>
+  </body>
+</html>

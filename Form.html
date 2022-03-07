@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function Patient (pID, ln, fn, tn) {
+        this.patientID=pID
+        this.LastName=ln
+        this.firstname=fn
+        this.telephoneNumber=tn
+      }
+      Patient.prototype.displayPatient = function (){
+        var display = "The New ill and stupid person's details are PatientID: "+this.patientID+" Last Name: "+this.LastName+" First Name; "+this.firstname+" Telephone Numebr: "+this.telephoneNumber
+        return display
+      }
+    
+      function addPatient(){
+        
+        var iID=document.getElementById("inputPatientID").value
+        var iLn=document.getElementById("inputLastName").value
+        var iFn=document.getElementById("inputFirstname").value
+        var iTn=document.getElementById("inputTelephoneNumber").value
+        console.log('iID: ',iID);
+        console.log('iLn: ',iLn);
+
+        var newPatient = new Patient (iID, iLn, iFn, iTn)
+        alert(newPatient.displayPatient() )
+        document.getElementById("patientForm").reset()
+
+     }
+
+    </script>
+  </head>
+<body>
+  <fieldset style="width: 15%">
+    <h2 style="text-align: center"> Add New Patient </h2>
+    <form id="patientForm" name="RegForm" action="/form/submit.php" method="post" class="w3docs">
+      <div>
+        <label for="inputPatientID">Enter Patient ID:</label><br>
+        <input type="text" id="inputPatientID" size="65" name="Name">
+      </div>
+      <br>
+      <div>
+        <label for="inputLastName">Enter Last Name:</label><br>
+        <input type="text" id="inputLastName" size="65" name="Email">
+      </div> <br>
+      <div>
+        <label for="inputFirstname">Enter First Name:</label><br>
+        <input type="text" id="inputFirstname" size="65" name="Password">
+      </div>
+      <br>
+      <div>
+        <label for="inputTelephoneNumber">Enter Telephone number:</label><br>
+        <input type="text" id="inputTelephoneNumber" size="65" name="Password">
+      </div>
+      <br>
+      <input type="button" value="Send" name="Submit" onclick="addPatient()">
+    </form>
+  </fieldset><br>
+   
+    
+
+</body>
+</html>
+

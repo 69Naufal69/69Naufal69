@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+        function sortlist(){
+            var unsortedList = document.querySelectorAll("li");
+            var listLength = unsortedList.length - 1
+                var sortedArray = []
+                 sortedArray.length=listLength 
+               
+                 for (count=0; count <= listLength;count++){
+                    sortedArray[count]=(unsortedList[count].innerHTML)
+                }
+                sortedArray.sort()
+                for (count=0; count <= listLength;count++){
+                    unsortedList[count].innerHTML=sortedArray[count]
+                }
+        }
+        </script>
+  </head>
+  <body>
+      <ul>
+          <li>1</li>
+          <li>9</li>
+          <li>0</li>
+      </ul>
+      <input type="button" value="sort" id="sort" onclick="sortlist()">
+  </body>
+  </html>
